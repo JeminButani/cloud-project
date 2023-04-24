@@ -11,16 +11,16 @@ cors = CORS(application)
 @application.route('/',methods=['GET'])
 @cross_origin()
 def welcome():
-    return "Hello MFs!!"
+    return "Hello !!"
 
 @application.route('/predict',methods=['POST'])
 @cross_origin()
 def predict():
     # payload = request.get_json()
     # params = payload['params']
-    data = request.json;
+    data = request.json
     # print(data);
-    params = data['arr'];
+    params = data['arr']
     with open('model.pkl','rb') as f:
         model = pickle.load(f)
     f.close()
